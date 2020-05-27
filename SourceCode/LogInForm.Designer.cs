@@ -46,22 +46,24 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(859, 593);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // logIn1
             // 
             this.logIn1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.logIn1.BackColor = System.Drawing.Color.Indigo;
+            this.logIn1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logIn1.Location = new System.Drawing.Point(3, 3);
             this.logIn1.Name = "logIn1";
-            this.logIn1.Size = new System.Drawing.Size(794, 444);
+            this.logIn1.Size = new System.Drawing.Size(853, 587);
             this.logIn1.TabIndex = 0;
             // 
             // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(859, 593);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "LogInForm";
             this.Text = "Hugo Delivery";

@@ -99,10 +99,58 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserNotInTableException.cs" />
-    <Compile Include="UserView.cs">
+    <Compile Include="UserView Classes\AddAddress.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserView.Designer.cs">
+    <Compile Include="UserView Classes\AddAddress.Designer.cs">
+      <DependentUpon>AddAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserView Classes\AddOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserView Classes\AddOrder.Designer.cs">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserView Classes\CheckAddress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserView Classes\CheckAddress.Designer.cs">
+      <DependentUpon>CheckAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserView Classes\CheckOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserView Classes\CheckOrders.Designer.cs">
+      <DependentUpon>CheckOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserView Classes\DeleteAddress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserView Classes\DeleteAddress.Designer.cs">
+      <DependentUpon>DeleteAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserView Classes\DeleteOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserView Classes\DeleteOrder.Designer.cs">
+      <DependentUpon>DeleteOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserView Classes\UpdateAddress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserView Classes\UpdateAddress.Designer.cs">
+      <DependentUpon>UpdateAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserView Classes\UpdatePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserView Classes\UpdatePassword.Designer.cs">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserView Classes\UserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserView Classes\UserView.Designer.cs">
       <DependentUpon>UserView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="LogIn.resx">
@@ -122,8 +170,33 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserView.resx">
+    <EmbeddedResource Include="UserView Classes\AddAddress.resx">
+      <DependentUpon>AddAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView Classes\AddOrder.resx">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView Classes\CheckAddress.resx">
+      <DependentUpon>CheckAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView Classes\CheckOrders.resx">
+      <DependentUpon>CheckOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView Classes\DeleteAddress.resx">
+      <DependentUpon>DeleteAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView Classes\DeleteOrder.resx">
+      <DependentUpon>DeleteOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView Classes\UpdateAddress.resx">
+      <DependentUpon>UpdateAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView Classes\UpdatePassword.resx">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserView Classes\UserView.resx">
       <DependentUpon>UserView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -139,6 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hugo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

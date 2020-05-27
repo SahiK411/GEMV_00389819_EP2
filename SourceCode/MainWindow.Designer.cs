@@ -58,6 +58,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(992, 561);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(40, 20);
             this.Name = "MainWindow";
             this.Text = "Hugo Delivery";
             this.ResumeLayout(false);

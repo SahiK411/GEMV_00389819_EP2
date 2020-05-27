@@ -31,3 +31,12 @@ D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.csproj.Gener
 D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.csproj.CopyComplete
 D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.exe
 D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.pdb
+D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.UserView_Classes.AddAddress.resources
+D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.UserView_Classes.DeleteAddress.resources
+D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.UserView_Classes.UpdateAddress.resources
+D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.UserView_Classes.UpdatePassword.resources
+D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.UserView.resources
+D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.UserView_Classes.CheckAddress.resources
+D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.UserView_Classes.AddOrder.resources
+D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.UserView_Classes.CheckOrders.resources
+D:\Programming\Chapter 3\Parcial 02\SourceCode\obj\Debug\SourceCode.UserView_Classes.DeleteOrder.resources

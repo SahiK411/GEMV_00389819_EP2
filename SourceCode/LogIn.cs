@@ -34,17 +34,34 @@ namespace SourceCode
                     }
 
                     var dr = dt.Rows[0];
-                    var userPassword = dr.ToString();
+                    var userPassword = dr[0].ToString();
 
                     if (textBox2.Text.Equals(userPassword))
                     {
                         dt = DBConnect.ExecuteQuery($"SELECT usertype FROM appuser WHERE username = '{textBox1.Text}'");
                         dr = dt.Rows[0];
 
-                        var userType = Convert.ToBoolean(dr[0].ToString());
-
-                        this.Parent.Hide();
-                        Application.Run(new MainWindow(userType));
+                        var userTypetext = (dr[0].ToString());
+                        bool userType;
+                        switch (userTypetext)
+                        {
+                            case "True":
+                            case "true":
+                                userType = true;
+                                break;
+                            case "False":
+                            case "false":
+                                userType = false;
+                                break;
+                            default:
+                                userType = false;
+                                break;
+                        }
+                        MainWindow mainForm = new MainWindow(userType, textBox1.Text);
+                        mainForm.Show();
+                        Parent.Parent.Hide();
+                        //Application.Run(new MainWindow(userType, textBox1.Text));
+                        
                     }
                 }
                 catch(Exception ex)
@@ -53,10 +70,7 @@ namespace SourceCode
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    else
-                    {
-                        MessageBox.Show("Ocurrio un problema.");
-                    }
+                    
                 }
             }
         }
@@ -64,6 +78,11 @@ namespace SourceCode
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            button1_Click(sender, e);
         }
     }
 }
