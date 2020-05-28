@@ -24,18 +24,32 @@ namespace SourceCode.UserView_Classes
                 var dt = DBConnect.ExecuteQuery($"SELECT idOrder FROM APPORDER " +
                     $"WHERE idOrder = {Convert.ToInt32(textBox1.Text)};");
 
-                if (dt.Equals(null))
-                {
-                    MessageBox.Show("La orden referenciada no existe. Por favor intente de nuevo.");
-                    return;
-                }
+                validateData();
 
                 DBConnect.ExecuteNonQuery($"DELETE FROM APPORDER WHERE idOrder = {Convert.ToInt32(textBox1.Text)}");
                 MessageBox.Show("Operacion Completada Exitosamente");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se produjo un error.");
+                if (ex is UserNotInTableException)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                else
+                {
+                    MessageBox.Show("Se produjo un error.");
+                }
+            }
+        }
+
+        private void validateData()
+        {
+            var dt = DBConnect.ExecuteQuery($"SELECT idOrder FROM APPORDER " +
+                    $"WHERE idOrder = {Convert.ToInt32(textBox1.Text)};");
+
+            if (dt.ExtendedProperties.Values.Count.Equals(0) && dt.Rows.Count == 0)
+            {
+                throw new UserNotInTableException();
             }
         }
     }

@@ -6,7 +6,7 @@ namespace SourceCode
     [Serializable]
     internal class UserNotInTableException : Exception
     {
-        public UserNotInTableException() : base("El Usuario referenciado no existe. Por favor intente de nuevo.")
+        public UserNotInTableException() : base("La entrada referenciada no existe. Por favor intente de nuevo.")
         {
         }
 

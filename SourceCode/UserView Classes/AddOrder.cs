@@ -27,30 +27,41 @@ namespace SourceCode.UserView_Classes
             {
                 try
                 {
-                    var dt = DBConnect.ExecuteQuery($"SELECT idProduct FROM product " +
-                        $"WHERE idProduct = {Convert.ToInt32(textBox1.Text)}");
-                    if (dt.Equals(null))
-                    {
-                        MessageBox.Show("El producto referenciado no existe. Por favor intente de nuevo");
-                        return;
-                    }
-
-                    dt = DBConnect.ExecuteQuery($"SELECT idAddress FROM address " +
-                        $"WHERE idAddress = {Convert.ToInt32(textBox2.Text)}");
-                    if (dt.Equals(null))
-                    {
-                        MessageBox.Show("La direccion referenciada no existe. Por favor intente de nuevo");
-                        return;
-                    }
-
+                    validateData();
                     DBConnect.ExecuteNonQuery($"INSERT INTO APPORDER(createDate, idProduct, idAddress) " +
-                        $"VALUES('{System.DateTime.Today}', {Convert.ToInt32(textBox1.Text)}, {Convert.ToInt32(textBox2.Text)}); ");
+                        $"VALUES('{DateTime.Today.Month.ToString() + "/" + DateTime.Today.Day.ToString() + "/" + DateTime.Today.Year.ToString()}'" +
+                        $", {Convert.ToInt32(textBox1.Text)}, {Convert.ToInt32(textBox2.Text)}); ");
                     MessageBox.Show("Operacion Completada Exitosamente");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ocurrio un problema.");
+                    if (ex is UserNotInTableException)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se produjo un error.");
+                    }
                 }
+            }
+        }
+        private void validateData()
+        {
+            var dt = DBConnect.ExecuteQuery($"SELECT idProduct FROM product " +
+                        $"WHERE idProduct = {Convert.ToInt32(textBox1.Text)}");
+
+            if (dt.ExtendedProperties.Values.Count.Equals(0) && dt.Rows.Count == 0)
+            {
+                throw new UserNotInTableException();
+            }
+
+            dt = DBConnect.ExecuteQuery($"SELECT idAddress FROM address " +
+                $"WHERE idAddress = {Convert.ToInt32(textBox2.Text)}");
+
+            if (dt.ExtendedProperties.Values.Count.Equals(0) && dt.Rows.Count == 0)
+            {
+                throw new UserNotInTableException();
             }
         }
     }

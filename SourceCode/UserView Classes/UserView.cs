@@ -90,7 +90,7 @@ namespace SourceCode
             temp = new CheckOrders(UserName);
             temp.Dock = DockStyle.Fill;
             tableLayoutPanel1.Controls.Add(temp, 0, 0);
-            tabPage7.Controls.Add(tableLayoutPanel1);
+            tabPage8.Controls.Add(tableLayoutPanel1);
         }
     }
 }

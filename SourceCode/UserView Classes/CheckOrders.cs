@@ -27,26 +27,15 @@ namespace SourceCode.UserView_Classes
                 var dr = dt.Rows[0];
                 var idUser = Convert.ToInt32(dr[0].ToString());
 
-                dt = DBConnect.ExecuteQuery($"SELECT idAddress FROM address WHERE idUser = {idUser}");
-                DataTable final = new DataTable();
-                final.Columns.Add(new DataColumn());
-                final.Columns.Add(new DataColumn());
-                final.Columns.Add(new DataColumn());
+                dt = DBConnect.ExecuteQuery($"SELECT ao.idOrder, ao.createDate, pr.name, au.fullname, ad.address " +
+                    $"FROM APPORDER ao, ADDRESS ad, PRODUCT pr, APPUSER au " +
+                    $"WHERE ao.idProduct = pr.idProduct " +
+                    $"AND ao.idAddress = ad.idAddress " +
+                    $"AND ad.idUser = au.idUser " +
+                    $"AND au.idUser = {idUser}; ");
+                
 
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    var temp = DBConnect.ExecuteQuery($"SELECT idOrder FROM apporder WHERE idAddress = {dt.Rows[i]}");
-                    for(int j = 0; j < temp.Rows.Count; j++)
-                    {
-                        DataRow row = final.NewRow();
-                        row[0] = dt.Rows[i];
-                        row[1] = temp.Rows[j];
-
-                        final.Rows.Add(row);
-                    }
-                }
-
-                dataGridView1.DataSource = final;
+                dataGridView1.DataSource = dt;
 
                 MessageBox.Show("Datos obtenidos excitosamente.");
             }
@@ -60,7 +49,7 @@ namespace SourceCode.UserView_Classes
         {
             try
             {
-                var dt = DBConnect.ExecuteQuery("SELECT * FROM PRODUCTS");
+                var dt = DBConnect.ExecuteQuery("SELECT * FROM PRODUCT");
 
                 dataGridView1.DataSource = dt;
 

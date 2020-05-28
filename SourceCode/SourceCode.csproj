@@ -33,12 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql, Version=4.1.3.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>packages\Npgsql.4.1.3.1\lib\net461\Npgsql.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -66,6 +77,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,13 +87,75 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBConnect.cs" />
-    <Compile Include="LogIn.cs">
+    <Compile Include="Admin Classes\AddBusiness.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
+    <Compile Include="Admin Classes\AddBusiness.Designer.cs">
+      <DependentUpon>AddBusiness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Classes\AddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin Classes\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Classes\AdminView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin Classes\AdminView.Designer.cs">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Classes\CheckDemand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin Classes\CheckDemand.Designer.cs">
+      <DependentUpon>CheckDemand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Classes\CheckGlobalOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin Classes\CheckGlobalOrders.Designer.cs">
+      <DependentUpon>CheckGlobalOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Classes\CheckProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin Classes\CheckProducts.Designer.cs">
+      <DependentUpon>CheckProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Classes\CreateProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin Classes\CreateProduct.Designer.cs">
+      <DependentUpon>CreateProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Classes\DeleteBusiness.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin Classes\DeleteBusiness.Designer.cs">
+      <DependentUpon>DeleteBusiness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Classes\DeleteProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin Classes\DeleteProduct.Designer.cs">
+      <DependentUpon>DeleteProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Classes\DeleteUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin Classes\DeleteUser.Designer.cs">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General Classes\DBConnect.cs" />
+    <Compile Include="General Classes\LogIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="General Classes\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="LogInForm.cs">
@@ -98,7 +172,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserNotInTableException.cs" />
+    <Compile Include="General Classes\UserNotInTableException.cs" />
     <Compile Include="UserView Classes\AddAddress.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,7 +227,37 @@
     <Compile Include="UserView Classes\UserView.Designer.cs">
       <DependentUpon>UserView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LogIn.resx">
+    <EmbeddedResource Include="Admin Classes\AddBusiness.resx">
+      <DependentUpon>AddBusiness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Classes\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Classes\AdminView.resx">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Classes\CheckDemand.resx">
+      <DependentUpon>CheckDemand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Classes\CheckGlobalOrders.resx">
+      <DependentUpon>CheckGlobalOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Classes\CheckProducts.resx">
+      <DependentUpon>CheckProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Classes\CreateProduct.resx">
+      <DependentUpon>CreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Classes\DeleteBusiness.resx">
+      <DependentUpon>DeleteBusiness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Classes\DeleteProduct.resx">
+      <DependentUpon>DeleteProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Classes\DeleteUser.resx">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General Classes\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">

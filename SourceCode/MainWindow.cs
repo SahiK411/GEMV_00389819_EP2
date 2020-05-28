@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SourceCode.Admin_Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace SourceCode
     {
         protected string UserName;
 
-        UserControl current = new UserControl();
+        private UserControl current = new UserControl();
         public MainWindow(bool userType, string userName)
         {
             InitializeComponent();
@@ -27,7 +28,9 @@ namespace SourceCode
             }
             else
             {
-
+                current = new AdminView(UserName);
+                current.Dock = DockStyle.Fill;
+                tableLayoutPanel1.Controls.Add(current, 0, 0);
             }
             this.FormClosed += new FormClosedEventHandler(this.MainForm_FormClosed);
         }
